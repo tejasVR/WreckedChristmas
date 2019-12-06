@@ -20,14 +20,14 @@ namespace XPO
 
         private void OnEnable()
         {
-            arObject.StartAugmentationCallback += StartAugmment;
-            arObject.StopAugmentationCallback += StopAugment;
+            arObject.TrackingFoundCallback += StartAugmment;
+            arObject.TrackingLostCallback += StopAugment;
         }
 
         private void OnDisable()
         {
-            arObject.StartAugmentationCallback -= StartAugmment;
-            arObject.StopAugmentationCallback -= StopAugment;
+            arObject.TrackingFoundCallback -= StartAugmment;
+            arObject.TrackingLostCallback -= StopAugment;
         }
 
         void Start()
